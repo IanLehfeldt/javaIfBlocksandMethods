@@ -16,13 +16,15 @@ public class Main {
 //			System.out.println("Got here!");
 //		}
 
-		calculateScore(gameOver, score, levelCompleted, bonus);
+		int highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+		System.out.println("Your final score was " + highScore);
 
 		score = 10000;
 		levelCompleted = 8;
 		bonus = 200;
 		calculateScore(gameOver, score, levelCompleted, bonus);
-		
+		System.out.println("Your final score was " + highScore);
+
 		//You can't access variables created in a code block outside of the block
 		//int finalScore = finalScore;
 
@@ -42,10 +44,10 @@ public class Main {
 		//Can also write if(gameOver)
 		if (gameOver == true) {
 			int finalScore = score + (levelCompleted * bonus);
-			System.out.println("Your final score was " + finalScore);
 			return finalScore;
 		}
 		//will only be reached if the previous block's return wasn't hit
+		//we return -1 because it represents an error or an invalid value/value not found
 		return -1;
 	}
 }
