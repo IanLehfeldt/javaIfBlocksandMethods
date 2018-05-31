@@ -38,6 +38,8 @@ public class Main {
 //			int finalScore = score + (levelCompleted * bonus);
 //			System.out.println("Your final score was " + finalScore);
 //		}
+
+		//This works but is it good?? Should we determine returned variables based off of in-laid methods?
 		displayHighScorePosition("Sam", calculateHighScorePosition(1500));
 		displayHighScorePosition("Taylor", calculateHighScorePosition(900));
 		displayHighScorePosition("Jane", calculateHighScorePosition(400));
@@ -47,7 +49,7 @@ public class Main {
     }
 
     public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
-		//Can also write if(gameOver)
+		//Can also write if(gameOver){...}
 		if (gameOver == true) {
 			int finalScore = score + (levelCompleted * bonus);
 			return finalScore;
@@ -57,7 +59,7 @@ public class Main {
 		return -1;
 	}
 
-	//void functions/methods are called procedures
+	//void functions/methods are called procedures (functions that dont return anything)
 	public static void displayHighScorePosition(String playerName, int highScorePosition) {
 		System.out.println(playerName+" managed to get into position "+highScorePosition+" on the highscore table.");
 	}
