@@ -63,14 +63,26 @@ public class Main {
 	}
 
 	public static int calculateHighScorePosition(int playerHighScore) {
-		if(playerHighScore >= 1000) {
-			return 1;
-		} else if (playerHighScore >= 500 && playerHighScore < 1000) {
-			return 2;
-		} else if (playerHighScore >= 100 && playerHighScore < 500) {
-			return 3;
-		} else {
-			return 4;
+//		if(playerHighScore >= 1000) {
+//			return 1;
+//		} else if (playerHighScore >= 500) {
+//			return 2;
+//		} else if (playerHighScore >= 100) {
+//			return 3;
+//		}
+//		//if all conditions above are false, this return is hit
+//		return 4;
+
+		//Rewrote above function to have only 1 return for absolute clarity.
+		int position = 4; //Assuming position four will always be returned
+		//Checks players high score and changes position variable inside function/method
+		if (playerHighScore >= 1000) {
+			position = 1;
+		} else if (playerHighScore >= 500) {
+			position = 2;
+		} else if (playerHighScore >= 100) {
+			position = 3;
 		}
+		return position;
 	}
 }
